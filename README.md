@@ -1,5 +1,9 @@
 ### ChatBot_Summative ###
 
+
+### Link to colab: https://colab.research.google.com/drive/1kVaSXcivOm0telMj-_Cbkv_UKN611faA?usp=sharing
+
+
 #  Creative Story Generator using T5 and TensorFlow
 
 This project fine-tunes a T5 Transformer model on a creative writing dataset to generate coherent short stories based on prompts. It includes training, evaluation, and an interactive Gradio interface for story generation.
