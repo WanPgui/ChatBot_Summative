@@ -52,12 +52,12 @@ The T5 tokenizer converts prompts and outputs to fixed-length tensors.
 
 ## Model and Training
 
-* Model used: `t5-small` or `t5-base`
+* Model used: `t5-small` 
 * Optimizer: AdamW via Hugging Face’s `create_optimizer()`
 * Batch size: 16
 * Learning rate: `5e-5`
 * Warmup steps: 500
-* Epochs: 8
+* Epochs: 4
 * Early stopping and model checkpointing included
 
 ```python
@@ -123,7 +123,7 @@ Generated: The lights flickered and a cold breeze rushed past her...
 
 ---
 
-## 🖼Visualization
+## Visualization
 
 Includes training and validation loss plots and metric comparison heatmaps.
 
@@ -137,7 +137,7 @@ plt.legend()
 
 ##  Gradio Web Interface
 
-An interactive UI to input custom prompts and generate stories.
+An interactive UI to input custom prompts and generate stories. Also, it saves the history of the generated stories.
 
 ```python
 import gradio as gr
@@ -152,13 +152,13 @@ gr.Interface(fn=generate_story, inputs="text", outputs="text").launch()
 
 ---
 
-## 🧾 How to Run
+##  How to Run
 
-1. Upload dataset `.parquet` files to your environment.
-2. Run preprocessing and normalization script.
-3. Launch training notebook.
-4. Evaluate results using provided evaluation scripts.
-5. Start `gradio_interface.py` to run the UI.
+1. Upload the dataset `.parquet` files to your environment.
+2. Run the preprocessing and normalization script.
+3. Launch the training notebook.
+4. Evaluate results using the provided evaluation scripts.
+5. Start `gradio_interface.py` to run the UI. The UI is clear and very understandable to work with.
 
 ---
 
@@ -166,8 +166,8 @@ gr.Interface(fn=generate_story, inputs="text", outputs="text").launch()
 
 * Originally trained using `t5-small`.
 * Upgraded to `t5-base` for better coherence.
-* Iteratively tuned for lower coherence score (<2.0).
-* Enhanced with BLEU, ROUGE, BERTScore metrics.
+* Iteratively tuned for lower coherence score (<3.5).
+* Enhanced with BLEU, ROUGE, and BERTScore metrics.
 * Added training history saving, checkpoints, and UI.
 
 ---
@@ -175,6 +175,8 @@ gr.Interface(fn=generate_story, inputs="text", outputs="text").launch()
 ## Future Improvements
 
 * Add multilingual prompt generation.
+* Train with a large pre-trained model.
 * Train with larger datasets.
 * Integrate with Hugging Face Hub.
 * Include coherence score visualization.
+* The colab keeps on crashing so I think one should really be careful.
